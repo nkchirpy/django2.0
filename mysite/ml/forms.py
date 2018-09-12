@@ -19,8 +19,13 @@ class Studentform(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': 'form-control is-valid oval_border', 'placeholder': 'Enter your Last Name', 'id': 'form-last_name', }),
 
 
-            'school_id': forms.Select(attrs={'class': 'form-control is-valid oval_border'})
+            'school_id': forms.Select(attrs={'class': 'form-control is-valid oval_border', 'string': 'Schools'})
         }
+
+    def __init__(self, *args, **kwargs):
+
+        super(Studentform, self).__init__(*args, **kwargs)
+        self.fields['school_id'].label = "Schools"
 
 
 class Schoolform(forms.ModelForm):
