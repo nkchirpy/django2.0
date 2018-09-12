@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	{% load staticfiles %}
+	<head>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<title>{% block title %}Home {% endblock %}</title>
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<!-- {% static 'srjdjango/css/animate.min.css' %} -->
+		<!-- <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+	    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	    
+	    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+	    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+	    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+	    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+	    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+	    
+	    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+	    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}"> -->
+	    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+		
+
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		  <a class="navbar-brand" href="{% url 'index' %}">Django</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+    		<li class="nav-item">
+		        <a class="nav-link" href="{% url 'student' %}">Student Form</a>
+		      </li>
+
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'school' %}">School Form</a>
+		      </li>
+
+		       <li class="nav-item">
+		        <a class="nav-link" href="{% url 'detail' %}">Details</a>
+		      </li>
+		      
+		      
+		  </div>
+		</nav>			
+		<div class="hero-wrap" style="background-image: url('{% static 'images/bg_1.jpg'%}');"  background-attachment:fixed;">
+	      <div class="overlay"></div>
+	      	<div class="container">
+        		<div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          		
+          			<h1 style="color: black">No Nation Can Prosper In Life Without Education</h1>
+          			<!-- <p><a href="#" class="btn btn-primary px-4 py-3">Apply Now</a> <a href="#" class="btn btn-secondary px-4 py-3">View Courses</a></p> -->
+        		</div>
+      		</div>
+    	</div>
+
+    	<script src="{% static 'js/main.js' %}"></script>
+  
+	</body>
+</html>
