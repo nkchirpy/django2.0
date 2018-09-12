@@ -31,7 +31,7 @@ class Student(models.Model):
         return reverse('student', kwargs={'pk': self.pk})
 
     def __str__(self):
-        return self.id
+        return self.first_name
 
     # class Meta:
     #     ordering = ('student_id',)
