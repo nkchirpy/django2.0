@@ -20,8 +20,8 @@ class School(models.Model):
 
 class Student(models.Model):
 
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    state = models.CharField(max_length=50)
 
     school_id = models.ForeignKey(
         School, on_delete=models.CASCADE, default=1)
