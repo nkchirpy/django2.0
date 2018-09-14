@@ -15,29 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from ml import views
-from ml import models
-
+from ml import views as ml
+from game import views as game
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Index.as_view(), name="index"),
-    path('success/', views.Success_view.as_view(template_name="success.html")),
+    path('', ml.Index.as_view(), name="index"),
+    path('success/', ml.Success_view.as_view(template_name="success.html")),
 
-    path('student/', views.Studentview.as_view(), name="student"),
+    path('student/', ml.Studentview.as_view(), name="student"),
 
-    path('school/', views.Schoolview.as_view(), name="school"),
+    path('school/', ml.Schoolview.as_view(), name="school"),
 
-    path('school_delete/<int:pk>', views.Schooldeleteview.as_view(), name="school_delete"),
+    path('school_delete/<int:pk>', ml.Schooldeleteview.as_view(), name="school_delete"),
 
-    path('school/<int:pk>', views.Schoolupdateview.as_view(), name="school"),
+    path('school/<int:pk>', ml.Schoolupdateview.as_view(), name="school"),
 
-    path('detail/', views.detailview, name="detail"),
+    path('detail/', ml.detailview, name="detail"),
 
     path('accounts/',include('django.contrib.auth.urls')),
 
+    path('register/',ml.register, name="register"),
 
-    # path('accounts/login/', name='login'),
-    path('register/',views.register, name="register")
+    # Game's app url
+    path('game/', game.game,name="game")
 ]
