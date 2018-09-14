@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import TemplateView, CreateView
-from django.views.generic.edit import CreateView
+from django.views.generic import TemplateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from . import models
 from .forms import Studentform, Schoolform
@@ -32,6 +32,19 @@ class Schoolview(CreateView):
     form_class = Schoolform
     template_name = 'school.html'
     success_url = reverse_lazy('school')
+
+class Schooldeleteview(DeleteView):
+    model = models.School
+    template_name = 'school_confirm_delete.html'
+    success_url = reverse_lazy('detail')
+
+
+class Schoolupdateview(UpdateView):
+    model = models.School
+    fields = ['name']
+    template_name = 'school_form.html'
+    success_url = reverse_lazy('detail')
+
 
 
 class Success_view(TemplateView):

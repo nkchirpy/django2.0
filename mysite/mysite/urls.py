@@ -24,9 +24,12 @@ urlpatterns = [
     path('success/', views.Success_view.as_view(template_name="success.html")),
 
     path('student/', views.Studentview.as_view(), name="student"),
-    # model=models.Student, success_url='success/')),
 
     path('school/', views.Schoolview.as_view(), name="school"),
+
+    path('school_delete/<int:pk>', views.Schooldeleteview.as_view(), name="school_delete"),
+
+    path('school/<int:pk>', views.Schoolupdateview.as_view(), name="school"),
+
     path('detail/', views.detailview, name="detail"),
-    # model=models.School, success_url='success/')),
 ]

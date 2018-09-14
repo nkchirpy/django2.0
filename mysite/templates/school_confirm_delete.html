@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}School Delete{% endblock %}
+
+{% block body_block %}
+
+<div class="container" style="margin-top: 10%">
+    <form method="post">{% csrf_token %}
+
+            <p>Are you sure you want to delete "{{ object.name }}"?</p>
+
+        <input type="submit" value="Confirm" class="btn btn-dark">
+        <a href="{% url 'detail' %}" class="btn btn-dark">Cancel</a>
+    </form>
+</div>
+
+
+{% endblock %}
