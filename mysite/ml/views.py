@@ -7,7 +7,7 @@ from . import models
 from .forms import Studentform, Schoolform
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
-
+import requests
 
 def register(request):
     if request.method == 'POST':
@@ -32,7 +32,9 @@ def register(request):
 def detailview(request):
     schools = models.School.objects.all()
     students = models.Student.objects.all()
-    return render(request, 'detail.html', {'schools': schools, 'students': students})
+    response = requests.get('https://api.printful.com/countries')
+    data = response.json()
+    return render(request, 'detail.html', {'schools': schools, 'students': students,'ip': data})
 
 
 class Index(TemplateView):
